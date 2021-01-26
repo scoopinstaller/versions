@@ -2,15 +2,15 @@
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
     "description": "A programming language that lets you work quickly and integrate systems more effectively.",
-    "version": "3.8.7",
+    "version": "3.9.1rc1",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.8.7/python-3.8.7-amd64.exe#/py3.exe",
-            "hash": "md5:325ec7acd0e319963b505aea877a23a4"
+            "url": "https://www.python.org/ftp/python/3.9.1/python-3.9.1rc1-amd64.exe#/py3.exe",
+            "hash": "md5:7444c283d8a94823beb52611c091a398"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.8.7/python-3.8.7.exe#/py3.exe",
-            "hash": "md5:ed99dc2ec9057a60ca3591ccce29e9e4"
+            "url": "https://www.python.org/ftp/python/3.9.1/python-3.9.1rc1.exe#/py3.exe",
+            "hash": "md5:db66fab666fe331eae12949364b72350"
         }
     },
     "installer": {
@@ -39,37 +39,29 @@
             "python.exe",
             "python3"
         ],
-        [
-            "python.exe",
-            "python38"
-        ],
         "Lib\\idlelib\\idle.bat",
         [
             "Lib\\idlelib\\idle.bat",
             "idle3"
-        ],
-        [
-            "Lib\\idlelib\\idle.bat",
-            "idle38"
         ]
     ],
     "env_add_path": "scripts",
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "python-(3\\.8\\.[\\d.]+)-"
+        "regex": "(?sm)Pre-releases.*?python-(3\\.9\\.\\d+rc{1,2}[\\d]+)-"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://www.python.org/ftp/python/$version/python-$version-amd64.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/$matchHead/python-$version-amd64.exe#/py3.exe"
             },
             "32bit": {
-                "url": "https://www.python.org/ftp/python/$version/python-$version.exe#/py3.exe"
+                "url": "https://www.python.org/ftp/python/$matchHead/python-$version.exe#/py3.exe"
             }
         },
         "hash": {
             "url": "https://www.python.org/downloads/release/python-$cleanVersion/",
-            "find": "$basename[\\S\\s]+?([A-Fa-f\\d]{32})"
+            "find": "$basename[\\S\\s]+?([A-Fa-f0-9]{32})"
         }
     }
 }

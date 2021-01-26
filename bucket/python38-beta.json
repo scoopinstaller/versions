@@ -1,15 +1,16 @@
 {
     "homepage": "https://www.python.org/",
     "license": "Python-2.0",
-    "version": "3.8.6rc1",
+    "description": "A programming language that lets you work quickly and integrate systems more effectively.",
+    "version": "3.8.7rc1",
     "architecture": {
         "64bit": {
-            "url": "https://www.python.org/ftp/python/3.8.6/python-3.8.6rc1-amd64.exe#/py3.exe",
-            "hash": "md5:35a2d2ba3f43f896744f6da6a2f0881d"
+            "url": "https://www.python.org/ftp/python/3.8.7/python-3.8.7rc1-amd64.exe#/py3.exe",
+            "hash": "md5:5cbe823213ada0b47d480c6de4869393"
         },
         "32bit": {
-            "url": "https://www.python.org/ftp/python/3.8.6/python-3.8.6rc1.exe#/py3.exe",
-            "hash": "md5:84175f3e4c38555b770857b34b88f736"
+            "url": "https://www.python.org/ftp/python/3.8.7/python-3.8.7rc1.exe#/py3.exe",
+            "hash": "md5:51487281c434cd50854b6a7bcfa6040c"
         }
     },
     "installer": {
@@ -47,7 +48,7 @@
     "env_add_path": "scripts",
     "checkver": {
         "url": "https://www.python.org/downloads/windows/",
-        "re": "python-(3[\\d.]+rc{1,2}[\\d]+)-"
+        "regex": "(?sm)Pre-releases.*?python-(3\\.8\\.\\d+rc{1,2}[\\d]+)-"
     },
     "autoupdate": {
         "architecture": {
