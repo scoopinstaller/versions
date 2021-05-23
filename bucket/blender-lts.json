@@ -1,0 +1,30 @@
+{
+    "version": "2.83.14",
+    "description": "3D creation suite",
+    "homepage": "https://www.blender.org/download/lts/",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-2.83.14-windows-x64.zip",
+            "extract_dir": "blender-2.83.14-windows64"
+        }
+    },
+    "bin": "blender.exe",
+    "shortcuts": [
+        [
+            "blender-lts.exe",
+            "Blender LTS"
+        ]
+    ],
+    "checkver": {
+        "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/",
+        "regex": "blender-([\\w.]+)-windows64\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://ftp.nluug.nl/pub/graphics/blender/release/Blender2.83/blender-$version-windows-x64.zip",
+            }
+        }
+    }
+}
